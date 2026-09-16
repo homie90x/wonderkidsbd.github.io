@@ -1,6 +1,20 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('fonts/TSTAR\ PRO\ W00\ Medium.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  margin: 100;
   display: flex;
   align-items: center;
-  padding: 0;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'MyCustomFont', monospace;
+}
+
+nav {
+  display: flex;
+  align-items:first baseline
 }
