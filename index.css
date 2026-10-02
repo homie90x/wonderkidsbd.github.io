@@ -297,105 +297,166 @@ body {
 
 
 /* =========================================
-   MOBILE
+   WONDERKIDS PAGE
+========================================= */
+
+.wonderkids-page {
+    width: 100%;
+    padding: 25px;
+}
+
+
+/* =========================================
+   PLAYER GRID
+========================================= */
+
+.players-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+/* =========================================
+   PLAYER CARD
+========================================= */
+
+.player-card {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+
+    border: 1px solid #111111;
+}
+
+
+/* =========================================
+   PLAYER IMAGE
+========================================= */
+
+.player-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   PLAYER INFORMATION
+========================================= */
+
+.player-info {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    background: #a6d600;
+
+    color: #111111;
+
+    padding: 20px;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+/* Image disappears immediately */
+
+.player-card:hover .player-image {
+    display: none;
+}
+
+
+/* Information appears immediately */
+
+.player-card:hover .player-info {
+    display: flex;
+}
+
+
+/* =========================================
+   PLAYER TEXT
+========================================= */
+
+.player-number {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.player-info h2 {
+    font-size: 28px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin: auto 0 8px 0;
+}
+
+
+.player-info p {
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   RESPONSIVE
 ========================================= */
 
 @media screen and (max-width: 900px) {
 
-    .header-left {
-        left: 15px;
-    }
-
-    .header-right {
-        right: 15px;
-    }
-
-    .header-left span {
-        display: none;
-    }
-
-    .brand-logo {
-        width: 280px;
-        max-width: 45vw;
-    }
-
-    .nav-links {
-        gap: 25px;
-    }
-
-    .nav-links a {
-        font-size: 8px;
-    }
-
-    .cart {
-        right: 10px;
-    }
-}
-
-
-@media screen and (max-width: 650px) {
-
-    .top-header {
-        height: 60px;
-    }
-
-    .header-left {
-        display: none;
-    }
-
-    .header-right {
-        display: none;
-    }
-
-    .brand-logo {
-        width: 240px;
-        max-width: 70vw;
-    }
-
-
-    /* Allow navbar to wrap on smaller screens */
-
-    .navbar {
-        height: auto;
-        min-height: 42px;
-
-        padding: 10px 45px 10px 10px;
-    }
-
-
-    .nav-links {
-        width: 100%;
-
-        gap: 12px 20px;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-
-    .nav-links a {
-        font-size: 8px;
-    }
-
-
-    .cart {
-        right: 8px;
-        font-size: 10px;
-    }
-
-
-    .hero {
-        height: calc(100vh - 102px);
-        min-height: 450px;
-    }
-
-
-    .hero-arrow {
-        width: 35px;
-        height: 50px;
-
-        font-size: 22px;
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
+
+
+@media screen and (max-width: 550px) {
+
+    .wonderkids-page {
+        padding: 10px;
+    }
+
+    .players-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .player-card {
+        aspect-ratio: 3 / 4;
+    }
+
+}
+
