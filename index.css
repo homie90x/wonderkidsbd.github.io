@@ -425,6 +425,22 @@ body {
 
 @media screen and (max-width: 900px) {
 
+    .navbar {
+        height: auto;
+        min-height: 37px;
+        padding: 8px 48px 8px 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
+    }
+
+    .cart {
+        right: 12px;
+    }
+
     .players-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -433,6 +449,64 @@ body {
 
 
 @media screen and (max-width: 550px) {
+
+    .top-header {
+        height: 58px;
+    }
+
+    .header-left {
+        left: 12px;
+        gap: 7px;
+    }
+
+    .header-left span {
+        display: none;
+    }
+
+    .brand-logo {
+        width: 200px;
+        max-width: 45vw;
+    }
+
+    .header-right {
+        right: 12px;
+        gap: 8px;
+    }
+
+    .header-right span {
+        font-size: 14px;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: start;
+        padding: 8px 10px;
+    }
+
+    .nav-links {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: flex-start;
+        gap: 10px 12px;
+    }
+
+    .nav-links a {
+        font-size: 8px;
+    }
+
+    .cart {
+        position: static;
+        grid-column: 2;
+        grid-row: 1;
+        margin-left: 10px;
+    }
+
+    .hero {
+        height: 65vh;
+        height: 65dvh;
+        min-height: 280px;
+    }
 
     .wonderkids-page {
         padding: 10px;
@@ -448,4 +522,3 @@ body {
     }
 
 }
-
