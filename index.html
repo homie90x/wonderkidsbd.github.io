@@ -9,7 +9,7 @@
     <title>wonderkidsbangla</title>
 
     <link rel="stylesheet" href="index.css">
-    <style>
+    <!-- <style>
         #splash-screen {
             position: fixed;
             inset: 0;
@@ -24,7 +24,7 @@
             max-height: 80vh;
             object-fit: contain;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -132,10 +132,41 @@
                 Your browser does not support HTML5 video.
             </video>
 
+            <div class="hero-fade" aria-hidden="true"></div>
+
             <button class="hero-arrow arrow-right" aria-label="Next image">
                 ›
             </button>
 
+        </section>
+
+        <section class="main1">
+            <h1>Our Future Begins Here.</h1>
+            <p>
+                Welcome to the home of latest young talents from Bangladesh. 
+            </p>
+            <p>
+                Discover their stories, explore the world they play in, and
+                follow along as the next generation makes its mark.
+            </p>
+        </section>
+
+        <section class="menu">
+            <a class="menu-card" href="wonderkids.html">
+                <span>MEET THE WONDERKIDS</span>
+                <img class="menu-card-image" src="images/meet.png" alt="">
+                <span class="menu-card-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="menu-card" href="merch.html">
+                <span>MERCH</span>
+                <img class="menu-card-image menu-card-image-logo" src="images/2.png" alt="">
+                <span class="menu-card-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="menu-card" href="upcoming.html">
+                <span>UPCOMING GAMES</span>
+                <img class="menu-card-image" src="images/3.jpg" alt="">
+                <span class="menu-card-arrow" aria-hidden="true">↗</span>
+            </a>
         </section>
 
     </main>
@@ -144,6 +175,30 @@
         setTimeout(() => {
             document.getElementById("splash-screen").remove();
         }, 1000);
+
+        const hero = document.querySelector(".hero");
+        let fadeFrame = null;
+
+        function updateHeroFade() {
+            if (fadeFrame !== null) {
+                return;
+            }
+
+            fadeFrame = requestAnimationFrame(() => {
+                const heroBottom = hero.getBoundingClientRect().bottom;
+                const fadeProgress = Math.min(
+                    1,
+                    Math.max(0, 1 - heroBottom / window.innerHeight)
+                );
+
+                hero.style.setProperty("--hero-fade", fadeProgress);
+                fadeFrame = null;
+            });
+        }
+
+        window.addEventListener("scroll", updateHeroFade, { passive: true });
+        window.addEventListener("resize", updateHeroFade);
+        updateHeroFade();
     </script>
 
 </body>
