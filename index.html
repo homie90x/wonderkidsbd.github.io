@@ -9,7 +9,7 @@
     <title>wonderkidsbangla</title>
 
     <link rel="stylesheet" href="index.css">
-    <!-- <style>
+    <style>
         #splash-screen {
             position: fixed;
             inset: 0;
@@ -17,6 +17,15 @@
             display: grid;
             place-items: center;
             background: #ffffff;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        #splash-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
         }
 
         #splash-screen img {
@@ -24,7 +33,7 @@
             max-height: 80vh;
             object-fit: contain;
         }
-    </style> -->
+    </style>
 </head>
 
 <body>
@@ -172,8 +181,11 @@
     </main>
 
     <script>
+        const splashScreen = document.getElementById("splash-screen");
+
         setTimeout(() => {
-            document.getElementById("splash-screen").remove();
+            splashScreen.classList.add("hidden");
+            setTimeout(() => splashScreen.remove(), 600);
         }, 1000);
 
         const hero = document.querySelector(".hero");
