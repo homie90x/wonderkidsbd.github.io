@@ -9,9 +9,29 @@
     <title>wonderkidsbangla</title>
 
     <link rel="stylesheet" href="index.css">
+    <style>
+        #splash-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: grid;
+            place-items: center;
+            background: #ffffff;
+        }
+
+        #splash-screen img {
+            max-width: 80vw;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+    </style>
 </head>
 
 <body>
+
+    <div id="splash-screen" aria-hidden="true">
+        <img src="images/wkb.png" alt="">
+    </div>
 
     <!-- TOP HEADER -->
     <header class="top-header">
@@ -108,7 +128,7 @@
                 loop
                 playsinline
             >
-                <source src="videos/farhan.mov" type="video/mp4">
+                <source src="videos/intro.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
 
@@ -119,6 +139,12 @@
         </section>
 
     </main>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById("splash-screen").remove();
+        }, 2000);
+    </script>
 
 </body>
 
