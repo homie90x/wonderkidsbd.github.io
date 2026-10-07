@@ -150,6 +150,48 @@ body {
 }
 
 
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    min-height: 92px;
+    padding: 16px 25px;
+    border-top: 1px solid #111111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background: #ffffff;
+}
+
+.footer-symbols {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 17px;
+    line-height: 1;
+}
+
+.footer-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}
+
+.footer-logo img {
+    display: block;
+    width: 140px;
+    max-width: 30vw;
+    max-height: 56px;
+    object-fit: contain;
+}
+
+
 /* Navigation list */
 
 .nav-links {
@@ -451,7 +493,7 @@ body {
 }
 
 .player-card-link:focus-visible {
-    outline: 3px solid #a6d600;
+    outline: 3px solid #d60000;
     outline-offset: -5px;
 }
 
@@ -510,41 +552,52 @@ body {
 
 .player-number {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #e30613;
-    font-size: clamp(110px, 14vw, 220px);
+    top: 18px;
+    left: 18px;
+    color: #111111;
+    font-size: clamp(56px, 7vw, 110px);
     font-weight: 700;
     line-height: 0.8;
-    letter-spacing: -0.1em;
+    letter-spacing: -0.08em;
+}
+
+
+.club-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    aspect-ratio: 1;
+    object-fit: contain;
     transform: translate(-50%, -50%);
 }
 
 
 .player-info h2 {
     position: absolute;
-    top: 28%;
-    left: 12px;
-    right: 12px;
+    bottom: 18px;
+    left: 18px;
+    width: 62%;
     z-index: 1;
-    font-size: clamp(16px, 2vw, 28px);
+    margin: 0;
+    font-size: clamp(12px, 1.7vw, 22px);
     line-height: 0.95;
     font-weight: 700;
     text-transform: uppercase;
-    text-align: center;
 }
 
 
 .player-info p {
     position: absolute;
-    right: 12px;
-    bottom: 16px;
-    left: 12px;
-    font-size: 10px;
+    right: 18px;
+    bottom: 18px;
+    width: 28%;
+    margin: 0;
+    font-size: clamp(9px, 1vw, 12px);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: center;
+    text-align: right;
 }
 
 /* =========================================
@@ -572,6 +625,7 @@ body {
 }
 
 .player-profile {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     min-height: 560px;
@@ -585,7 +639,7 @@ body {
     display: block;
     object-fit: cover;
     object-position: center top;
-    background: #eeeeee;
+    background: #fdfdfd;
 }
 
 .player-profile-details {
@@ -595,13 +649,18 @@ body {
     padding: clamp(28px, 5vw, 72px);
 }
 
-.player-profile-kicker {
-    margin-bottom: 16px;
-    color: #555555;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
+.player-profile-heading {
+    display: block;
+}
+
+.player-profile-logo {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1;
+    width: clamp(100px, 15vw, 280px);
+    height: clamp(100px, 15vw, 280px);
+    object-fit: contain;
 }
 
 .player-profile-number {
@@ -624,7 +683,8 @@ body {
     display: inline-block;
     align-self: flex-start;
     padding: 8px 12px;
-    background: #a6d600;
+    background: #d60000;
+    color:#ffffff;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.7px;
@@ -762,6 +822,21 @@ body {
         grid-template-columns: minmax(0, 1fr) auto;
         align-items: start;
         padding: 8px 10px;
+    }
+
+    .site-footer {
+        min-height: 74px;
+        padding: 12px;
+    }
+
+    .footer-symbols {
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    .footer-logo img {
+        width: 100px;
+        max-height: 42px;
     }
 
     .nav-links {
