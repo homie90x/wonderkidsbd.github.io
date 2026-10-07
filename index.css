@@ -2,6 +2,13 @@
    RESET
 ========================================= */
 
+@font-face {
+    font-family: "TSTAR W00 Heavy";
+    src: url("/fonts/TSTAR\ PRO\ W00\ Medium.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -183,7 +190,7 @@ body {
 /* Current page */
 
 .nav-links a.active {
-    color: #a6d600;
+    color: #e30613;
 }
 
 
@@ -254,6 +261,16 @@ body {
     background: linear-gradient(to bottom, transparent 40%, #ffffff 100%);
 }
 
+.hero-top-white .hero-fade {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.75) 20%,
+        rgba(255, 255, 255, 0.18) 42%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
 .main1 {
     max-width: 1500px;
     margin: 0 auto;
@@ -263,8 +280,10 @@ body {
 }
 
 .main1 h1 {
-    margin-bottom: 24px;
-    font-size: clamp(36px, 6vw, 192px);
+    margin-bottom: 44px;
+    font-size: 200px;
+    font-family: "TSTAR W00 Heavy", sans-serif;
+    letter-spacing: -0.08em;
 }
 
 .main1 p {
@@ -425,6 +444,17 @@ body {
     border: 1px solid #111111;
 }
 
+.player-card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+}
+
+.player-card-link:focus-visible {
+    outline: 3px solid #a6d600;
+    outline-offset: -5px;
+}
+
 
 /* =========================================
    PLAYER IMAGE
@@ -445,14 +475,15 @@ body {
 ========================================= */
 
 .player-info {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     background: #ffffff;
     color: #111111;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
+    padding: 18px;
 }
 
 
@@ -462,15 +493,14 @@ body {
 
 /* Image disappears immediately */
 
-.player-card:hover .player-image {
+.player-card:hover .player-image,
+.player-card:focus-within .player-image {
     display: none;
 }
 
-
-/* Information appears immediately */
-
-.player-card:hover .player-info {
-    display: flex;
+.player-card:hover .player-info,
+.player-card:focus-within .player-info {
+    display: block;
 }
 
 
@@ -479,30 +509,163 @@ body {
 ========================================= */
 
 .player-number {
-    font-size: 74px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #e30613;
+    font-size: clamp(110px, 14vw, 220px);
     font-weight: 700;
+    line-height: 0.8;
+    letter-spacing: -0.1em;
+    transform: translate(-50%, -50%);
 }
 
 
 .player-info h2 {
-    font-size: 28px;
-    line-height: 1;
-
+    position: absolute;
+    top: 28%;
+    left: 12px;
+    right: 12px;
+    z-index: 1;
+    font-size: clamp(16px, 2vw, 28px);
+    line-height: 0.95;
     font-weight: 700;
-
     text-transform: uppercase;
-
-    margin: auto 0 8px 0;
+    text-align: center;
 }
 
 
 .player-info p {
+    position: absolute;
+    right: 12px;
+    bottom: 16px;
+    left: 12px;
     font-size: 10px;
     font-weight: 700;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
+    text-align: center;
+}
+
+/* =========================================
+   PLAYER PROFILE
+========================================= */
+
+.player-profile-page {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 35px 25px 70px;
+}
+
+.player-profile-back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #111111;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.player-profile-back:hover {
+    opacity: 0.55;
+}
+
+.player-profile {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    min-height: 560px;
+    border: 1px solid #111111;
+}
+
+.player-profile-photo {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    background: #eeeeee;
+}
+
+.player-profile-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(28px, 5vw, 72px);
+}
+
+.player-profile-kicker {
+    margin-bottom: 16px;
+    color: #555555;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.player-profile-number {
+    font-size: clamp(72px, 11vw, 150px);
+    font-weight: 700;
+    line-height: 0.85;
+    letter-spacing: -0.08em;
+}
+
+.player-profile-name {
+    margin: 20px 0 12px;
+    font-family: "TSTAR W00 Heavy", Arial, Helvetica, sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+}
+
+.player-profile-position {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 8px 12px;
+    background: #a6d600;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+.player-profile-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 42px;
+    border-top: 1px solid #111111;
+}
+
+.player-profile-fact {
+    padding: 16px 10px 16px 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.player-profile-fact:nth-child(odd) {
+    margin-right: 18px;
+}
+
+.player-profile-fact dt {
+    margin-bottom: 8px;
+    color: #666666;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.player-profile-fact dd {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.player-profile-note {
+    margin-top: 22px;
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 
@@ -530,6 +693,20 @@ body {
 
     .players-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .player-profile-page {
+        padding: 24px 18px 45px;
+    }
+
+    .player-profile {
+        grid-template-columns: 1fr;
+    }
+
+    .player-profile-photo {
+        max-height: 620px;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
     }
 
     .menu-card {
@@ -618,6 +795,18 @@ body {
     .players-grid {
         grid-template-columns: 1fr;
         gap: 10px;
+    }
+
+    .player-profile-page {
+        padding: 18px 10px 35px;
+    }
+
+    .player-profile-details {
+        padding: 24px 18px;
+    }
+
+    .player-profile-facts {
+        margin-top: 28px;
     }
 
     .menu-card {
