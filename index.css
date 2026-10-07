@@ -313,6 +313,221 @@ body {
     );
 }
 
+.merch-page {
+    width: 100%;
+    padding: 42px 25px 70px;
+}
+
+.merch-heading {
+    max-width: 1500px;
+    margin: 0 auto 26px;
+}
+
+.merch-heading p {
+    margin-bottom: 8px;
+    color: #666666;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.merch-heading h1 {
+    font-family: "TSTAR W00 Heavy", Arial, Helvetica, sans-serif;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 0.95;
+}
+
+.merch-grid {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.merch-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border: 1px solid #111111;
+    background: #eeeeee;
+}
+
+.merch-product-image {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eeeeee;
+    color: #777777;
+}
+
+.merch-product-image span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.merch-product-image b {
+    position: absolute;
+    right: 14px;
+    bottom: 10px;
+    color: #cccccc;
+    font-size: clamp(56px, 8vw, 100px);
+    line-height: 0.8;
+}
+
+.merch-product-info {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px;
+    background: #ffffff;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.merch-card:hover .merch-product-info,
+.merch-card:focus-within .merch-product-info {
+    opacity: 1;
+}
+
+.merch-product-number {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    color: #111111;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 700;
+    line-height: 0.8;
+    letter-spacing: -0.08em;
+}
+
+.merch-product-info h2 {
+    margin-bottom: 8px;
+    font-size: clamp(14px, 1.6vw, 22px);
+    line-height: 1;
+}
+
+.merch-product-info p {
+    color: #666666;
+    font-size: 11px;
+}
+
+.about-content {
+    width: min(100% - 50px, 1200px);
+    margin: 0 auto;
+    padding: 88px 0 100px;
+}
+
+.about-intro {
+    max-width: 760px;
+    margin-bottom: 72px;
+}
+
+.about-kicker {
+    margin-bottom: 16px;
+    color: #d60000;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.about-intro h1 {
+    margin-bottom: 22px;
+    font-family: "TSTAR W00 Heavy", Arial, Helvetica, sans-serif;
+    font-size: clamp(38px, 7vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+}
+
+.about-copy,
+.about-description p {
+    color: #444444;
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.7;
+}
+
+.about-descriptions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+}
+
+.about-description {
+    min-height: 220px;
+    padding: 26px 30px 30px 0;
+}
+
+.about-description + .about-description {
+    padding-left: 30px;
+    border-left: 1px solid #cccccc;
+}
+
+.about-index {
+    color: #d60000;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.about-description h2,
+.about-social h2 {
+    margin: 26px 0 14px;
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.about-social {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-top: 72px;
+}
+
+.about-social h2 {
+    margin-top: 0;
+}
+
+.about-social-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+}
+
+.about-social-links a,
+.about-social-placeholder {
+    min-height: 54px;
+    padding: 16px 10px;
+    border-bottom: 1px solid #cccccc;
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+}
+
+.about-social-links a:hover,
+.about-social-links a:focus-visible {
+    color: #d60000;
+}
+
+.about-social-placeholder span {
+    color: #777777;
+    font-size: 8px;
+    letter-spacing: 0.3px;
+}
+
 .main1 {
     max-width: 1500px;
     margin: 0 auto;
@@ -680,12 +895,12 @@ body {
 }
 
 .player-profile-position {
-    display: inline-block;
+    display: block;
     align-self: flex-start;
-    padding: 8px 12px;
-    background: #d60000;
-    color:#ffffff;
-    font-size: 11px;
+    padding: 0;
+    background: transparent;
+    color: #111111;
+    font-size: clamp(18px, 2vw, 24px);
     font-weight: 700;
     letter-spacing: 0.7px;
     text-transform: uppercase;
@@ -694,31 +909,29 @@ body {
 .player-profile-facts {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 42px;
-    border-top: 1px solid #111111;
+    gap: 10px;
+    margin-top: 32px;
 }
 
 .player-profile-fact {
-    padding: 16px 10px 16px 0;
-    border-bottom: 1px solid #cccccc;
-}
-
-.player-profile-fact:nth-child(odd) {
-    margin-right: 18px;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #111111;
 }
 
 .player-profile-fact dt {
     margin-bottom: 8px;
     color: #666666;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
 }
 
 .player-profile-fact dd {
-    font-size: 16px;
+    font-size: clamp(17px, 1.6vw, 20px);
     font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 .player-profile-note {
@@ -753,6 +966,10 @@ body {
 
     .players-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .merch-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .player-profile-page {
@@ -863,8 +1080,59 @@ body {
         min-height: 280px;
     }
 
+    .about-content {
+        width: calc(100% - 32px);
+        padding: 52px 0 64px;
+    }
+
+    .about-intro {
+        margin-bottom: 42px;
+    }
+
+    .about-descriptions {
+        grid-template-columns: 1fr;
+    }
+
+    .about-description {
+        min-height: 0;
+        padding: 22px 0;
+    }
+
+    .about-description + .about-description {
+        padding-left: 0;
+        border-top: 1px solid #cccccc;
+        border-left: 0;
+    }
+
+    .about-description h2 {
+        margin-top: 18px;
+    }
+
+    .about-social {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-top: 48px;
+    }
+
     .wonderkids-page {
         padding: 10px;
+    }
+
+    .merch-page {
+        padding: 28px 10px 45px;
+    }
+
+    .merch-grid {
+        gap: 10px;
+    }
+
+    .merch-product-info {
+        padding: 12px;
+    }
+
+    .merch-product-number {
+        top: 12px;
+        left: 12px;
     }
 
     .players-grid {
@@ -880,8 +1148,39 @@ body {
         padding: 24px 18px;
     }
 
+    .player-profile-logo {
+        top: 12px;
+        right: 12px;
+        width: clamp(56px, 18vw, 76px);
+        height: clamp(56px, 18vw, 76px);
+    }
+
+    .player-profile-name {
+        margin: 16px 0 10px;
+        font-size: clamp(30px, 9vw, 42px);
+        overflow-wrap: anywhere;
+    }
+
+    .player-profile-position {
+        font-size: 18px;
+    }
+
     .player-profile-facts {
-        margin-top: 28px;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 24px;
+    }
+
+    .player-profile-fact {
+        padding: 12px;
+    }
+
+    .player-profile-fact dt {
+        font-size: 10px;
+    }
+
+    .player-profile-fact dd {
+        font-size: 17px;
     }
 
     .menu-card {
