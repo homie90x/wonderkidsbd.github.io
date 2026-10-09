@@ -491,6 +491,11 @@ body {
     padding-top: 72px;
 }
 
+.about-social > div:first-child {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
 .about-social h2 {
     margin-top: 0;
 }
@@ -504,12 +509,10 @@ body {
 .about-social-links a,
 .about-social-placeholder {
     min-height: 54px;
-    padding: 16px 10px;
-    border-bottom: 1px solid #cccccc;
     color: #111111;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.6px;
@@ -519,6 +522,25 @@ body {
 .about-social-links a:hover,
 .about-social-links a:focus-visible {
     color: #d60000;
+}
+
+.about-social-links .about-instagram-link {
+    grid-column: 1 / -1;
+    min-height: 160px;
+    justify-content: center;
+}
+
+.about-instagram-logo {
+    width: 112px;
+    height: 112px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+}
+
+.about-instagram-logo .about-instagram-dot {
+    fill: currentColor;
+    stroke: none;
 }
 
 .about-social-placeholder span {
